@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class SaveFiles {
     public static void saveFiles(String html, String fileName) {
-        String folderPath = "/Users/engineer-mac-015/Desktop/JavaAcademy/crawlerProject/src/main/java/org/html";
+        String folderPath = "path/to/html";
         fileName = fileName + ".html";
 
         try {
