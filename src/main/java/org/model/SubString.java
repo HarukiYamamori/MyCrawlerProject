@@ -21,12 +21,6 @@ public class SubString {
     }
 
     private static boolean existValue(String str) {
-        if(str.length() == 0){
-            return false;
-        }
-        if(str == null){
-            return false;
-        }
-        return true;
+        return str.length() != 0 && str != null;
     }
 }
