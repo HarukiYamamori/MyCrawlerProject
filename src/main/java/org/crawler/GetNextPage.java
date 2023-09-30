@@ -9,6 +9,7 @@ import java.util.List;
 public class GetNextPage {
     public static List<String> getNextPage(Page page) {
         List<String> nextPageUrls = new ArrayList<>();
+        System.out.println("Started getNextPage process");
         while(checkNextPageExist(page)) {
             ElementHandle nextPageEl = page.querySelector(".pager .next > a");
             String nextPageUrl = nextPageEl.getAttribute("href");
@@ -20,6 +21,7 @@ public class GetNextPage {
             nextPageUrls.add(nextPageUrl);
             page.navigate(nextPageUrl);
         }
+        System.out.println("getNextPage process completed");
         return nextPageUrls;
     }
 

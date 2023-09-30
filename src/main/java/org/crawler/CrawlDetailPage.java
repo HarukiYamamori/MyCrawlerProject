@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlDetailPage {
-    public static void crawlDetailsPage(Page page) {
+    public static void crawlDetailsPage(Page page, String dateTime) {
         List<String> detailsPageUrls = crawlDetailUrls(page);
 
         for(String detailsPageUrl : detailsPageUrls) {
@@ -17,7 +17,7 @@ public class CrawlDetailPage {
             String fileName = detailsPageUrl;
             fileName = SubString.getSubString(fileName, "catalogue/", "/index");
 
-            SaveFiles.saveFiles(html, fileName);
+            SaveFiles.saveFiles(html, fileName, dateTime);
         }
     }
 
