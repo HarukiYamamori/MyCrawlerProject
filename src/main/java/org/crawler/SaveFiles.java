@@ -3,13 +3,13 @@ package org.crawler;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class SaveFiles {
+
+    static String basePath = "path/to/crawler_project/";
     public static void saveFiles(String html, String fileName, String dateTime) {
 
-        String folderPath = "path/to/crawler_project/" + dateTime + "/html";
+        String folderPath = basePath + dateTime + "/html";
         fileName = fileName + ".html";
 
         try {
@@ -34,8 +34,8 @@ public class SaveFiles {
     }
 
     public static void makeDateFolder(String dateTime) {
-        String baseFolderPath = "path/to/crawler_project/" + dateTime;
-        File folder = new File(baseFolderPath);
+        String folderPath = basePath + dateTime;
+        File folder = new File(folderPath);
         if(!folder.exists()){
             folder.mkdir();
         }
